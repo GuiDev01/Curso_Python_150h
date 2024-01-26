@@ -1,23 +1,13 @@
 
-import re 
-import sys
+import random
 
 
-cpf3 = input('Digite seu cpf: ')
-cpf = re.sub(
-    r'[^0-9]',
-    '',
-    cpf3
-)
-
-entrada_e_sequecial = cpf == cpf[0] * len(cpf)  
-
-if entrada_e_sequecial:
-    print('Você mandou números iguais!!!')
-    sys.exit()
+var = ''
+for j in range(9):
+    var += str(random.randint(0,9))
 
 
-var = cpf[:9]
+
 n = 10
 soma = 0
 
@@ -44,18 +34,4 @@ digito_2 = digito_2 if digito_2 <= 9 else 0
 
 cpf_gerado_pelo_calculo = f'{var}{digito_1}{digito_2}'
 
-if cpf == cpf_gerado_pelo_calculo:
-    print(f'{cpf3} é válido')
-else:
-    print('CPF inválido')
-
-
-
-
-
-
-
-
-
-    
-
+print(cpf_gerado_pelo_calculo)
